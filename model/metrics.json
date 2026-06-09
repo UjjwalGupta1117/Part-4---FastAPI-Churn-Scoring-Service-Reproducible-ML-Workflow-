@@ -1,0 +1,9 @@
+{
+  "model": "XGBoost",
+  "split": "test",
+  "threshold": 0.4,
+  "AUC": 0.8608,
+  "F1": 0.8,
+  "Recall": 0.8571,
+  "Precision": 0.75
+}
