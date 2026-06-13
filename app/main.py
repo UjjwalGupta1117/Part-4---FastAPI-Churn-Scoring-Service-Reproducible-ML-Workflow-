@@ -79,6 +79,7 @@ class CustomerFeatures(BaseModel):
     last_visit_days_ago:  int   = Field(..., ge=0)
 
     @field_validator("monetary_180d")
+    @classmethod
     def monetary_not_negative(cls, v):
         if v < 0:
             raise ValueError("monetary_180d must be >= 0")
@@ -96,6 +97,7 @@ def risk_label(prob: float) -> str:
     elif prob >= 0.40:
         return "MEDIUM"
     return "LOW"
+
 
 
 def risk_explanation(features: CustomerFeatures, prob: float) -> str:
